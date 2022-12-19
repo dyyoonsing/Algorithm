@@ -5,7 +5,11 @@ def makeSnail(snail, curNum, curSpot, curSnailSize, findNum, findNumSpot) :
     curSpotX, curSpotY = curSpot[0], curSpot[1]
 
     for i in range(curNum, curSnailSize**2 + 1) :
+        if findNum == i :
+            findNumSpot = [curSpotX+1, curSpotY+1]
+        
         snail[curSpotX][curSpotY] = i
+
         if curSpotX == minNum :
             if curSpotY == minNum : 
                 curSpotX -= 1
@@ -30,8 +34,6 @@ def makeSnail(snail, curNum, curSpot, curSnailSize, findNum, findNumSpot) :
             if curSpotX > minNum : 
                 curSpotX -= 1
 
-        if findNum == i :
-            findNumSpot = [curSpotX, curSpotY]
     
     curSpot = [curSpotX, curSpotY]
 
@@ -51,7 +53,7 @@ answer = makeSnail(snail, 1, centerSpot, 1, findNum, findNumSpot)
 
 for snailLoop in range(n) :
     print(*answer[0][snailLoop])
-print(answer[1])
+print(*answer[1])
 
 #  ㅎㅎ 반대로함,,
 #  def makeSnail(snail, snailN, startN, startSpot, qNum, numSpot) : 
