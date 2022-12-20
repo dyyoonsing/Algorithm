@@ -1,0 +1,30 @@
+"""
+아래 형태의 달팽이모양 만들기!
+1 4
+2 3
+
+1 8 7
+2 9 6
+3 4 5
+"""
+
+def makeSnail(snailList, curSize, curNum, curSpot) :
+    print("curSize : " + str(curSize) + " // curNum : " + str(curNum)
+            + " // curSpot : " + str(curSpot))
+
+
+    if curSize == 1 or curSize == 2 :
+        return snailList
+    else : 
+        return makeSnail(snailList, curSize - 2, curNum, curSpot)
+
+inputNumber = int(input("달팽이 사이즈를 입력하세용~ : "))
+
+snailList = [[0 for y in range(inputNumber)] for x in range(inputNumber)]
+
+for printIdx in range(inputNumber) :
+    print(snailList[printIdx])
+
+# makeSnail()
+
+
